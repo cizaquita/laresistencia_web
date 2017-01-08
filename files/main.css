@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+html, body 			{ height: 100%; }
+body 				{ font-family: 'Oswald', sans-serif; background: #000; color: #FFF }
+.warp 				{ margin: 0 auto; max-width: 90%; }
+.container 			{ color: #FFF }
+
+
+
+/*	SECTION =======	*/
+header				{ display: block; background-size: cover; background-color: #1A1A1A; border-bottom: 1px solid black; position: relative; min-height: 625px; color: #FFF; }
+section#home		{ display: block; background: #378fb4; color: #fff; padding: 80px 0; border-bottom: 1px solid #CCC; }
+section#gpluscom 	{ display: block; background: #F7F7F7; color: #fff; padding: 50px 0 60px 0; border-top: 1px solid #fff; }
+section#access, section#imp		{ display: block; color: #fff; padding: 40px 0 10px 0; border-top: 2px solid #378fb4; background: url(../bg_access.jpg) #181818 top center no-repeat; background-size: cover; }
+section#access .desc { max-width: 480px }
+section#gpluscom p { color: #333; font-size: 1.2em; line-height: 1.5em }
+section#access p { color: #dff8ff; font-size: 1.2em; line-height: 1.5em }
+section#mapaColombia p { color: #dff8ff; font-size: 1.2em; line-height: 1.5em }
+section#mapaColombia, section#imp		{ display: block; color: #fff; padding: 40px 0 10px 0; border-top: 2px solid #378fb4;}
+section#mapaColombia .desc { max-width: 480px }
+section#imp p { color: #dff8ff; font-size: 0.8em; line-height: 1.5em }
+
+
+.imp {font-size:0.8em;font-family: 'Open Sans', sans-serif !important; display:block; text-align:center; margin:20px 0 5px 0 }
+
+/*NAVI ============*/
+nav#topnav { z-index: 2000; position: absolute; top: 10px; left: 35px }
+nav#topnav ul { font-family: 'Oswald', sans-serif; font-weight: 300; display: block; font-size: 1.2em; padding: 10px 0; height: 20px; color: #FFF; }
+nav#topnav ul li { padding: 0; margin-right: 35px; margin-bottom: 10px; float: left; }
+nav#topnav ul li a { text-decoration: none; color: inherit; display: block; padding: 0 3px; margin-top: -2px }
+nav#topnav ul li a i { font-size: 0.9em; font-weight: normal; }
+nav#topnav ul li a:hover { text-decoration: underline }
+.r { background: url(../files/resis.png) center no-repeat; background-size: contain; width: 40px; margin-right: 5px !important; text-indent: -9999px; height: 50px; }
+
+
+/*TYPO ============*/
+p { font-family: 'Oswald', sans-serif !important; font-weight: 300 !important; margin-bottom: 12px !important;font-size: 1.1em;
+line-height: 1.4em ; }
+p.headline { font-size: 2em; color:#1a1a1a; font-family: 'Oswald', sans-serif; font-weight: 700}
+p.freemind { font-size: 2em; color:#FFFFFF; font-family: 'Oswald', sans-serif; font-weight: bold; margin-left: 50px; text-transform: uppercase;line-height: 1;}
+a { color: #378fb4 }
+a.join, a.verfify, a.join1 { border-radius: 4px; font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 2em; color: #FFF; padding: 15px; text-decoration: none; display: inline-block; }
+a:hover { color: white !important; text-decoration: none }
+a.join { background: #378fb4; }
+a.join:hover { background: #0b5b7d; }
+a.verfify { background: #dc4a36; }
+a.verfify:hover { background: #ab3323; }
+#home a { color:#ffffff; text-decoration: none}
+
+h2 {font-family: 'Oswald', sans-serif !important;}
+h2 small { font-size: 0.55em }
+#home h3, #register h3 { font-size: 3em !important; font-family: 'Oswald', sans-serif; margin-bottom: 25px; text-transform: uppercase; line-height: 1; }
+#register h3 { margin: 15px 0 }
+h3.gp { color: #dc4a36; font-family: 'Oswald', sans-serif; margin-bottom: 30px; padding-top: 20px; font-weight: 700; position: relative; }
+h3.access { font-size: 4.2em; color: #378fb4; font-family: 'Oswald', sans-serif; margin-bottom: 30px; padding-top: 20px; font-weight: 300; position: relative; }
+h3.mapaColombia { font-size: 3.2em; color: #FFFFFF; font-family: 'Oswald', sans-serif; margin-bottom: 30px; padding-top: 20px; font-weight: 300; position: relative; }
+
+
+
+.info { text-align: center; margin: 30px auto; width: 98%; font-size: 1em; padding: 10px 15px; border: 1px solid #378fb4; }
+
+/*PROMO SECTION =========*/
+.promo { display: block; position: absolute; z-index: 2000; top: 15%; left: 8%; color: #FFF; width: 90%; float: left;}
+.promo h2 { display: block; font-weight: 400; text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); margin-bottom: 5px; }
+.promo p { display: block; max-width: 1000px; font-size: 1.4em; line-height: 1.5; text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); font-family: 'Oswald', sans-serif; font-weight: 300 !important; }
+
+
+/*ELEMENTS ============*/
+.logo_resis { margin-right: 2%; float: left; }
+.video_resis { float: right; }
+.logo_resis { width: 150px; }
+.grid { width: 45%; margin-right: 2%; float: left; }
+.last { margin-right: 0 !important; }
+.gplusdec { max-width: 633px; }
+.gplusmok { float: left; margin-right: 20px; width: 50%; max-width: 400px; }
+.badluck { float: right; margin-right: 20px; width: 50%; max-width: 500px; }
+.player { float: left; margin-right: 20px; width: 50%; max-width: 200px;}
+.comm { float: right; margin-right: 20px; width: 80%; max-width: 250px; max-height:500px;}
+/* Informacion de comunidades mapaColombia @cizaquita */
+.titleComunidades, .titleContacto {
+	font-size: 1em;
+}
+.infoComunidades {
+	float: right;
+    left: 10px;
+    margin-right: 0px;
+    width: 80%;
+    max-width: 250px;
+    max-height: 500px;
+    margin-bottom: 10px;
+}
+li a{
+	color: #193049;
+}
+li a:hover {
+    color: white !important;
+}
+#listaComunidades li, #personaContacto li{
+	font-weight: 200 !important;
+    font-family: 'Oswald', sans-serif !important;
+    color: white;
+    list-style-type:square;
+}
+#mapaCol{
+	width: 70%;
+	height: 700px;
+    margin-bottom: 80px;
+}
+/*.logo_resco { float: center; margin-right: 65px; width: 90%; max-width: 750px;opacity:0.75;filter:alpha(opacity=75);} */
+.logo_resco {opacity:0.70;filter:alpha(opacity=70);} 
+h2:hover
+{
+opacity:0.25;
+filter:alpha(opacity=25); /* For IE8 and earlier */
+}
+
+.ste {
+			display: block;
+			width: 70%;
+			max-width: 950px;
+			max-height: 166px;
+			margin: 20px auto;
+			-webkit-transition: all 1s;
+			-moz-transition: all 1s;
+			-ms-transition: all 1s;
+			-o-transition: all 1s;
+			transition: all 1s;
+		}
+
+
+
+.last { margin-right: 0 !important }
+.hide { display: none; visibility: hidden; }
+.hidden { opacity: 0.2 }
+
+
+ @media (max-width: 839px) {
+.promo 			{ top: 20%; left: 5%; color: #FFF; width: 95%; }
+nav#topnav 		{ left: 15px }
+nav#topnav ul li { margin-right: 15px; margin-bottom: 10px; font-size: 0.8em; }
+a.join 			{ float: none; font-size: 1.5em; margin-top: 10px }
+.logo_resis, .video_resis { float: none }
+#home h3 		{ text-align: center }
+.logo_resis, .video_resis { text-align: center; display: block; width: auto }
+.step 			{ float: none; margin-right: 0; width: 60px; margin-top: 10px; }
+.form_1 { padding: 5px; height: 80px; }
+#submit {font-size: 1.26em;}
+.video_resis iframe { width: 99% }
+.ste {
+			display: block;
+			width: 100%;
+			max-width: 950px;
+			max-height: 166px;
+			margin: 20px auto;
+		}
+section#access, section#imp		{ background:#000 !important; }
+.info { text-align: center; margin: 10px auto; width: 95%; font-size: 1em; padding: 10px 8px; border: 1px solid #378fb4; }
+
+}
+section#mapaColombia, section#imp		{ background:#378fb4 !important; }
+.info { text-align: center; margin: 10px auto; width: 95%; font-size: 1em; padding: 10px 8px; border: 1px solid #FFFFFF; }
+
+}
+
+
+ @media (max-width: 940px) {
+.video_resis iframe { width: 95%; height: 250px }
+.form_1, .form_2 { height: 85px !important; }
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    text-align: center;
+}
+ 
+.video-container iframe,
+.video-container object, 
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+#submit { outline: 0px; height: 49px; background: #378fb4; font-family: 'Oswald', sans-serif; color: white; font-size: 1.5em; font-weight: 300; border: none; border-radius: 4px; transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; margin-top: 13px; padding: 2px 8px; cursor: pointer; }
+.form_1, .form_2 { padding: 5px; height: 100px; transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; }
+.form_2 { opacity: 0; }
+.show { opacity: 1 !important; }
+.a { -webkit-transform: translate(0, -15px); }
+.step { float: left; margin-right: 10px; }
+
+.einruecken {}
+
+
+
+
+a.join1 { background: #378fb4; }
+a.join1:hover { background: #378fb4; }
+
+/**
+*	MapaColombia -> Informacion de comindades @cizaquita
+**/
+#infoComunidades{
+	border: solid 5px #FFF;
+	left: 10px;
+	width: 250px;
+	height: 250px;
+}
+

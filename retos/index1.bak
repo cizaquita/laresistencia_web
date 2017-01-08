@@ -1,0 +1,39 @@
+<?php 
+//conectar::crea_session();
+//session_start();
+require_once("config.php");
+//conectar::crea_session();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='content-type' content='text/html;charset=utf-8' />
+	<link rel='stylesheet' type='text/css' href='<?php echo conectar::ruta(); ?>script/css/style.css'/>
+	<link rel='stylesheet' type='text/css' href='<?php echo conectar::ruta(); ?>script/css/lytebox.css' media='screen' />
+	<script language='javascript' type='text/javascript' src='<?php echo conectar::ruta(); ?>script/js/funciones.js'></script>
+	<script language='javascript' type='text/javascript' src='<?php echo conectar::ruta(); ?>script/js/lytebox.js'></script>
+<?php
+//conectar::crea_session();
+if(isset($_SESSION['ses_user'])){
+	if(!empty($_GET['accion'])){
+		$accion=$_GET['accion'];
+	}
+	else{
+		$accion="index";
+	}
+	if(is_file("controller/".$accion."Controller.php")){
+		require_once("controller/".$accion."Controller.php");
+	}
+	else{
+		require_once("controller/errorController.php");
+	}
+}
+else{
+	//conectar::crea_session();
+	require_once("controller/loginController.php");
+	//header("location: ".conectar::ruta()."?action=login2");
+}
+?>
+	</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!-- don't look at the source, it's an ugly quick hack -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<meta name="description" content="Portal level, range and energy calculator for Ingress">
+<title>Calculadora de distancia</title>
+<script>
+var maxLevel=8;
+var maxResonators=8;
+var players = 1;
+var ar = { // available_resonators
+//         L1  L3  L5  L7
+//           L2  L4  L6  L8
+	"1" : [0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"2" : [0,8,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"3" : [0,8,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"4" : [0,8,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"5" : [0,8,4,4,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"6" : [0,8,4,4,4,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"7" : [0,8,4,4,4,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0],
+	"8" : [0,8,4,4,4,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0]
+};
+var energy = [ 0, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 
+	// values above level 8 are just guesses (for now)
+	7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000];
+
+function update_total_players(x) {
+	players = x.options[x.selectedIndex].value;
+	for (var i=1; i <= maxLevel; i++) {
+		document.getElementById("player"+i).disabled = i > players;
+	}
+	calculate_portal();
+}
+function update_player(player,x) {
+//	var level = x.options[x.selectedIndex].value;
+	calculate_portal();
+}
+function calculate_portal() {
+	var resonators = new Array();
+	for (var i=1; i <= players; i++) {
+		var x = document.getElementById("player"+i);
+		var playerlevel = x.options[x.selectedIndex].value;
+		for (var j=1; j<= maxLevel; j++) {
+			if (resonators[j] == null)
+				resonators[j] = 0;
+			resonators[j] += ar[playerlevel][j];
+		}
+	}
+	var used_resonators = 0;
+	var portal = new Array();
+	var portal_total = 0;
+	var portal_energy = 0;
+	for (i=maxLevel; i >= 1; i--) {
+		var available_resonators = resonators[i];
+		if (used_resonators + available_resonators > maxResonators) {
+			available_resonators = maxResonators - used_resonators;
+		}
+		if (portal[i] == undefined) portal[i] = 0;
+		portal[i] += available_resonators;
+		used_resonators += available_resonators;
+		var preso = document.getElementById("pl"+i);
+		preso.innerHTML = ""+portal[i];
+		portal_total += i * portal[i];
+		portal_energy += portal[i] * energy[i];
+	}
+	var portal_level = portal_total / maxResonators;
+	document.getElementById("portal_level").innerHTML = portal_level;
+	document.getElementById("portal_energy").innerHTML = portal_energy;
+	var portal_range = 160 * Math.pow(portal_level, 4);
+	var unit = "m";
+	if (portal_range > 1000) {
+		portal_range /= 100;
+		portal_range = Math.round(portal_range);
+		portal_range /= 10; // eine Nachkommastelle
+		unit = "km";
+	}
+	document.getElementById("portal_range").innerHTML = portal_range + unit;
+}
+</script>
+</head>
+<body>
+<h1>Calculadora de distancia</h1>
+<noscript><h2>This calculator requires JavaScript.</h2></noscript>
+<form>
+Número de Jugadores:
+<select id="total_players" onchange="update_total_players(this);">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select>
+<table>
+<thead>
+<tr>
+<th>Jugador</th>
+<th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th> <th>6</th> <th>7</th> <th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Nivel </td>
+<td> <select id="player1" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+<td> <select disabled id="player2" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+<td> <select disabled id="player3" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+<td> <select disabled id="player4" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+<td> <select disabled id="player5" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+<td> <select disabled id="player6" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+<td> <select disabled id="player7" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+<td> <select disabled id="player8" onchange="calculate_portal()">
+	<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+	<option>5</option> <option>6</option> <option>7</option> <option>8</option>
+</select> </td>
+</tr>
+<tr>
+	<td>LinkAmp Rare</td>
+	<td> 
+		<select disabled id="linkAmpRare" onchange="calculate_portal()">
+		<option>1</option> <option>2</option> <option>3</option> <option>4</option>
+		</select>
+	</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Nivel máximo: <span id="portal_level">1.00</span></h2>
+<h3>Distancia máxima: <span id="portal_range">160m</span></h3>
+<h3>Energía máxima: <span id="portal_energy">8000</span></h3>
+<table>
+<tr>
+<th>Resonadores:</th>
+<th>L1</th> <th>L2</th> <th>L3</th> <th>L4</th> <th>L5</th> <th>L6</th> <th>L7</th> <th>L8</th>
+</tr>
+<tr>
+<th>Necesarios</th>
+<td id="pl1">8</td> <td id="pl2">0</td> <td id="pl3">0</td> <td id="pl4">0</td>
+<td id="pl5">0</td> <td id="pl6">0</td> <td id="pl7">0</td> <td id="pl8">0</td>
+</tr>
+</table>
+</form>
+<hr>
+<p style="text-align: right;">
+&copy; 2012-2013 Sven Neuhaus. All rights reserved. <br>
+Ingress is &copy; 2012 NianticLabs@Google. <br> Edited by <a href="https://telegram.me/Cizaquita">@Cizaquita</a>
+</p>
+
+</body>
+</html>

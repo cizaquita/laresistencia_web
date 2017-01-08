@@ -1,0 +1,5 @@
+<?php
+require_once('../foro/SSI.php');
+$_SESSION['login_url'] = 'index.php' . $_SERVER['PHP_SELF'] . '?' . $_SERVER['?accion=index'];
+$_SESSION['logout_url'] = 'index.php' . $_SERVER['PHP_SELF'] . '?' . $_SERVER['?accion=login'];
+?>

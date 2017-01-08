@@ -1,0 +1,36 @@
+<?php require_once("config.php");?>
+	<title>ResCol - Retos</title>
+		<link rel='stylesheet' type='text/css' href='<?php echo conectar::ruta(); ?>script/css/style_login.css' media='screen' />
+	</head>
+	<body>
+		<div id="logo-login">
+			<center><img src="script/images/site/logo3.png"></center>
+		</div>
+		<div id="container">
+			<form action="https://rescol-juandavidr.c9users.io/web/foro/index.php?action=login2" method="post" accept-charset="UTF-8">
+				<div class="login">LOGIN</div>
+				<div class="username-text">Usuario:</div>
+				<div class="password-text">Contrase&ntilde;a:</div>
+				<div class="username-field">
+					<input type="text" id="user" name="user" value="" maxlength="20" class="input_text" required="required" autofocus="autofocus" />
+				</div>
+				<div class="password-field">
+					<input type="password" name="passwrd" id="passwrd" class="input_password" value="" />
+					<input type="hidden" name="cookielength" value="-1" />
+				</div>
+				<div class="forgot-usr-pwd">Olvidaste tu <a href="recover.phtml" rel="lyteframe" title="Reto" rev="width: 400px; height: 300px; scrolling: no;">Usuario</a> o <a href="recover.phtml" rel="lyteframe" title="Reto" rev="width: 400px; height: 300px; scrolling: no;">Contrase&ntilde;a</a>?</div>
+				<input type="submit" name="login" value="GO" class="button_submit" />
+			</form>
+		</div>
+		
+		
+
+
+<?php
+//print_r($_SESSION);
+require_once("view/menu.phtml");
+echo "<br>";
+?>
+		<div id="footer">
+			<a href="#">Ingress Resistencia Colombia</a>
+		</div>

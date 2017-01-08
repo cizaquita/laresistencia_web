@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var links = $("#test").val();
+            var resultado = Math.round(400/9*Math.atan(links/Math.E));
+            $(".resultado").text("Mitigacion: " + resultado);
+        });
+    });
+    </script>
+</head>
+<body>
+    <p>Links: <input type="text" id="test"></p>
+    <p class="resultado">Mitigacion: </p>
+    
+    <button>Calcular</button>
+</body>
+</html>

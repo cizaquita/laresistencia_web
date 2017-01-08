@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+<title>ResCol - Zona de Retos</title>
+<link rel="stylesheet" type="text/css" href="script/css/style.css" />
+<script type="text/javascript" language="javascript" src="script/js/lytebox.js"></script>
+<link rel="stylesheet" href="script/css/lytebox.css" type="text/css" media="screen" />
+</head>
+<body bgcolor=#000 padding-top="0">
+<center>
+<div id="logo">
+<img id="logotipo" src="script/images/site/logo.png">
+</div>
+
+<div id="capa"></div>
+
+<div id="contenido">
+
+// ESTA PARTE ES INTERACTIVA, SEGUN LA CATEGORIA (<?php echo $_GET['cat']; ?>) SE CARGAN LOS RETOS, EN UN CICLO
+
+	<h2>Retos de CATEGORIA</h2>
+		<a href="view/reto.php?id=1" rel="lyteframe" title="Reto" rev="width: 400px; height: 300px; scrolling: no;"><img src="script/images/site/reto.jpg"></a>
+		<a href="view/reto.php?id=2" rel="lyteframe" title="Reto" rev="width: 400px; height: 300px; scrolling: no;"><img src="script/images/site/reto.jpg"></a>
+		<a href="view/reto.php?id=3" rel="lyteframe" title="Reto" rev="width: 400px; height: 300px; scrolling: no;"><img src="script/images/site/reto.jpg"></a>
+		<a href="view/reto.php?id=4" rel="lyteframe" title="Reto" rev="width: 400px; height: 300px; scrolling: no;"><img src="script/images/site/reto.jpg"></a>
+		<a href="view/reto.php?id=5" rel="lyteframe" title="Reto" rev="width: 400px; height: 300px; scrolling: no;"><img src="script/images/site/reto.jpg"></a>
+
+</div>
+
+<?php
+
+require_once("view/menu.phtml");
+
+require_once("view/navigation.phtml");
+?>
+	
+</center>
+</body>
+</html>

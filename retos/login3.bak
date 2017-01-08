@@ -1,0 +1,18 @@
+<?php
+
+require_once('../foro/SSI.php');
+$_SESSION['login_url'] = 'index2.php' . $_SERVER['https://rescol-juandavidr.c9users.io/web/retos/'] . '?' . $_SERVER['?accion=index'];
+$_SESSION['logout_url'] = 'index2.phpp' . $_SERVER['https://rescol-juandavidr.c9users.io/web/retos/'] . '?' . $_SERVER['?accion=login'];
+
+
+if ($context['user']['is_guest'])
+{
+	ssi_login();
+}
+else
+{
+	//You can show other stuff here.  Like ssi_welcome().  That will show a welcome message like.
+	//Hey, username, you have 552 messages, 0 are new.
+	ssi_logout();
+}
+?>

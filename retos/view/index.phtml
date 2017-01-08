@@ -1,0 +1,32 @@
+<?php
+if ($context['user']['is_guest']){
+ header("Location: ". conectar::ruta() ."index2.php");
+}
+else{
+ ?>
+<title>Ingress Resistencia Colombia</title>
+</head>
+<body bgcolor=#000 padding-top="0">
+<center>
+<div id="logo">
+<img id="logotipo" src="script/images/site/logo.png">
+</div>
+
+<div id="capa"></div>
+
+<div id="contenido">
+Bienvenido....<br> <?php 
+ssi_welcome();
+//print_r($_SESSION['ses_user']);?>
+</div>
+
+<?php
+
+require_once("view/menu.phtml");
+
+require_once("view/navigation.phtml");
+?>	
+</center>
+<?php
+}
+?>
